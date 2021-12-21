@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/nav', [App\Http\Controllers\QnAController::class, 'index']);
+Route::get('/', [App\Http\Controllers\QnAController::class, 'index']);
