@@ -15,8 +15,6 @@
     <nav class="d-flex flex-direction-row justify-content-between bg-primary py-3 px-4 text-white">
         <a style="color: white" href=""><img width="100" height="35" src="{{ url('storage/Q&A FORUM LOGO.png') }}"></a>
         <div class="d-flex flex-direction-row">
-            <input id="myInput" class="form-control" style="width: 400px" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success btn-light" type="button">Search</button>
         </div>
         <div class="fs-5">
             @if($id == 1)

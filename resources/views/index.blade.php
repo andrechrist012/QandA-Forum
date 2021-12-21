@@ -4,28 +4,56 @@
 
 @section('isi')
 
+
 <center>
     <div class="row" style="margin-left:10%">
-        <Thread id="Thread">
-@foreach($threads as $Threads)
+        <input id="myInput" class="form-control container " style="margin-left: -0.1%" type="search" placeholder="Search" aria-label="Search">
+             @if($id == 1)
+                <div class="mr-5">
+                <a href="" class="h4 border border-dark rounded mt-1 bg-primary"  
+                style="color: white; text-decoration: none; padding: 10px;margin-top: -20px">Create Thread</a>
+                </div>
+            @endif
+            <Thread id="Thread" class="container" style="margin-left: -1%">
+{{-- @foreach($threads as $Threads)
             <div id="isiThread">
                 <div class="container border border-dark rounded mt-3">
                 
                     <div class="text-left"><strong>{{ $Threads->title }}</strong> {{ $Threads->category }}</div>
                     <div class="text-justify">{{ $Threads->description }}</div>
                     <div class="text-right">{{ $Threads->datein }}</div>
-                    <div class="text-right">{{ $Threads->name }}</div>
+                    <div class="text-right">{{ $Threads->name }}</div> --}}
 
-                </div>
+                {{-- </div>
+            </div> --}}
+{{-- @endforeach --}}
+
+        <div id="isiThread">
+            <div class="container border border-dark rounded mt-3">
+            
+                <div class="text-left"><strong>This is Lorem</strong> Category1</div>
+                <div class="text-justify">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus
+                    laboriosam eius voluptas inventore possimus libero repellendus natus, 
+                    enim, incidunt minima omnis distinctio nulla ab voluptatibus similique rem sunt quaerat dolore.</div>
+                <div class="text-right">3 November 2021</div>
+                <div class="text-right">Person 2</div>
+
             </div>
-@endforeach
+        </div>
+        <div id="isiThread">
+            <div class="container border border-dark rounded mt-3">
+            
+                <div class="text-left"><strong>Anak Gembala Duar</strong> Orang Gila</div>
+                <div class="text-justify">Aku Adalah Anak Gembala yang suka BOM !!!</div>
+                <div class="text-right">3 November 2021</div>
+                <div class="text-right">Gembala</div>
+
+            </div>
+        </div>
+
         </Thread> 
-            @if($id == 1)
-                <div class="ml-3 mt-4">
-                <a href="" class="h4 border border-dark rounded mt-1 bg-primary"  
-                style="color: white; text-decoration: none; padding: 10px;margin-top: -20px">Create Thread</a>
-                </div>
-            @endif
+
+            
         </div>
 </center>
 @stop
