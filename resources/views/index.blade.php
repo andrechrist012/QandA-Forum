@@ -7,14 +7,16 @@
 
 <center>
     <div class="row" style="margin-left:10%">
-        <input id="myInput" class="form-control container " style="margin-left: -0.1%" type="search" placeholder="Search" aria-label="Search">
-             @if($id == 1)
-                <div class="mr-5">
-                <a href="" class="h4 border border-dark rounded mt-1 bg-primary"  
-                style="color: white; text-decoration: none; padding: 10px;margin-top: -20px">Create Thread</a>
-                </div>
-            @endif
-            <Thread id="Thread" class="container" style="margin-left: -1%">
+        <div class="container row">
+            <input id="myInput" class="form-control col mr-5"  type="search" placeholder="Search" aria-label="Search">
+                @if($id == 1)
+                    <div>
+                    <a href="" class="h4 border border-dark rounded mt-1 bg-primary"  
+                    style="color: white; text-decoration: none; padding: 10px;margin-top: -20px">Create Thread</a>
+                    </div>
+                @endif
+        </div>
+        <Thread id="Thread" class="container" style="margin-left: -1%">
 {{-- @foreach($threads as $Threads)
             <div id="isiThread">
                 <div class="container border border-dark rounded mt-3">
