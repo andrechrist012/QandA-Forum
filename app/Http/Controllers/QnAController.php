@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\MsUser;
 use App\Models\TrThread;
+use App\Models\TrReply;
 use Illuminate\Http\Request;
 
 class QnAController extends Controller
@@ -32,5 +33,24 @@ class QnAController extends Controller
     //         'email'=>request('email'),
     //     ]);
     // }
+    public function viewReply(){
+        $reply = TrReply::all();
+        return view('', compact('reply'));
+    }
 
+    public function replyThread(Request $request, $id){
+        $thread = TrThread::find($id);
+        TrReply::create([
+            'message' => $request->message,
+            'userId' => Auth::id(),
+            'threadId' => $thread->id
+        ]);
+        return redirect()->back();
+    }
+
+    public function deleteReply($id){
+        $reply = TrReply::find($id);
+        $reply->delete();
+        return redirect()->back();
+    }
 }
