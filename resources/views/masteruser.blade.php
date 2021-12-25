@@ -27,36 +27,19 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">Username</th>
+                        <th scope="col">Name</th>
                         <th scope="col">Email</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($users as $value)
                         <tr>
-                            <th>Nur</th>
-                            <th>Nur@gmail.com</th>
-                            <th><a class="text-danger">DELETE</a></th>
-                            
-                        </tr>
-
-                        <tr>
-                            <th>Nur</th>
-                            <th>Nur@gmail.com</th>
+                            <th>{{$value->name}}</th>
+                            <th>{{$value->email}}</th>
                             <th><a class="text-danger">DELETE</a></th>
                         </tr>
-
-                        <tr>
-                            <th>Nur</th>
-                            <th>Nur@gmail.com</th>
-                            <th><a class="text-danger">DELETE</a></th>
-                        </tr>
-
-                        <tr>
-                            <th>Nur</th>
-                            <th>Nur@gmail.com</th>
-                            <th><a class="text-danger">DELETE</a></th>
-                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

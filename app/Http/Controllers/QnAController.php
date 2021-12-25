@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-// use App\Models\MsUser;
+use App\Models\MsUser;
 use App\Models\TrThread;
 use Illuminate\Http\Request;
 
@@ -21,14 +21,9 @@ class QnAController extends Controller
 
     public function masteruser(){
         $id = 1;
-        // $users = MsUser::all();
-              
-        // $users->update([
-        //     'name'=>request('name'),
-        //     'email'=>request('email'),
-        // ]);
+        $users = MsUser::all();
 
-        return view('masteruser', ['id' => $id]);
+        return view('masteruser', ['id' => $id, 'users' => $users]);
     }
 
     // public function update(MsUser $users){
