@@ -18,7 +18,7 @@
         </div>
         <div class="fs-5">
             @if($id == 1)
-                <a style="color: white; margin-right:40px; text-decoration: none;" href="">Master User</a>
+                <a style="color: white; margin-right:40px; text-decoration: none;" href="/table">Master User</a>
                 <a style="color: white; text-decoration: none;" href="">Logout</a>
             @elseif($id == 2)
                 <a style="color: white; text-decoration: none;" href="">Logout</a>
