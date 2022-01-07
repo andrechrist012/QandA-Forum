@@ -19,3 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\QnAController::class, 'index']);
 Route::get('/table', [App\Http\Controllers\QnAController::class, 'masteruser']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
