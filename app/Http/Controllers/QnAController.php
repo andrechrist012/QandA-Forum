@@ -33,10 +33,10 @@ class QnAController extends Controller
     //         'email'=>request('email'),
     //     ]);
     // }
-    public function viewThread(){
-        $id = 2;
+    public function viewThread($id){
         $reply = TrReply::all();
-        return view('view_thread', compact('reply', 'id'));
+        $thread = TrThread::find($id);
+        return view('view_thread', compact('reply'));
     }
 
     public function replyThread(Request $request, $id){
