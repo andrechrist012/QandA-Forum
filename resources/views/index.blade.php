@@ -32,14 +32,12 @@
 
         <div id="isiThread">
             <div class="container border border-dark rounded mt-3">
-            
                 <div class="text-left"><strong>This is Lorem</strong> Category1</div>
                 <div class="text-justify">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus
                     laboriosam eius voluptas inventore possimus libero repellendus natus, 
                     enim, incidunt minima omnis distinctio nulla ab voluptatibus similique rem sunt quaerat dolore.</div>
                 <div class="text-right">3 November 2021</div>
                 <div class="text-right">Person 2</div>
-
             </div>
         </div>
         <div id="isiThread">
