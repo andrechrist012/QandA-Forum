@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-3">
             <div class="card " style="background-color:#D8EFFF" >
-                <div class="text-center">
+                <div class="text-center"><br>
                    <h4>
                     {{ __('Login') }}
                 </h4>

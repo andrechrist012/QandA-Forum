@@ -6,7 +6,7 @@
 
 
 <center>
-    <div class="row" style="margin-left:10%">
+    <div style="padding-top:10px">
         <div class="container row">
             <input id="myInput" class="form-control col mr-5"  type="search" placeholder="Search" aria-label="Search">
                 @if($id == 1)

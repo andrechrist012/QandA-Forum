@@ -13,8 +13,8 @@
     <title>@yield('title')</title>
 </head>
 <body>
-    <nav class="d-flex flex-direction-row justify-content-between bg-primary py-3 px-4 text-white">
-        <a style="color: white" href=""><img width="100" height="35" src="{{ url('storage/Q&A FORUM LOGO.png') }}"></a>
+    <nav class="d-flex flex-direction-row justify-content-between bg-primary px-4 text-white" style="align-items: center; padding: 0; margin: 0;">
+        <a style="color: white" href=""><img width="55%" src="{{ asset('asset/logo.png') }}"></a>
         <div class="d-flex flex-direction-row">
         </div>
         <div class="fs-5">

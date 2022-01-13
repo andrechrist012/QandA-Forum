@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', [App\Http\Controllers\QnAController::class, 'index']);
+Route::get('/allThread', [App\Http\Controllers\QnAController::class, 'index']);
 Route::get('/table', [App\Http\Controllers\QnAController::class, 'masteruser']);
 
 Auth::routes();
@@ -24,4 +24,4 @@ Route::get('/viewThread', [App\Http\Controllers\QnAController::class, 'viewThrea
 Route::post('/replyThread/{id}', [App\Http\Controllers\QnAController::class, 'replyThread']);
 Route::delete('/deleteReply/{id}', [App\Http\Controllers\QnAController::class, 'deleteReply']);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
