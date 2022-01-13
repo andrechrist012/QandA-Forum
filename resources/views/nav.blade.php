@@ -20,9 +20,23 @@
         <div class="fs-5">
             @if($id == 1)
                 <a style="color: white; margin-right:40px; text-decoration: none;" href="/table">Master User</a>
-                <a style="color: white; text-decoration: none;" href="">Logout</a>
+                <a style="color: white; text-decoration: none;" class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
             @elseif($id == 2)
-                <a style="color: white; text-decoration: none;" href="">Logout</a>
+                <a style="color: white; text-decoration: none;" class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
             @endif
         </div>
     </nav>

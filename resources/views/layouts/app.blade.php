@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title')</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background: #3CA8F6; padding: 0; margin: 0;">
+        <nav class="navbar navbar-expand-md navbar-light bg-primary shadow-sm" style="padding: 0; margin: 0;">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                    <img src="{{ asset('asset/logo.png') }}" style="width: 60%;" alt=""> 
