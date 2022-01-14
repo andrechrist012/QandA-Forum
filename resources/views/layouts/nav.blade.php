@@ -63,8 +63,12 @@
     let description = document.getElementsByClassName("longText");
     for(let i=0; i < description.length; i++) {
         const text	=  description[i].innerHTML;
-        const result = text.substring(0, 180) + '...'; 
-        description[i].innerHTML = result;
+        if(text.length > 200){
+            const result = text.substring(0, 200) + '...'; 
+            description[i].innerHTML = result;
+        }else{
+            description[i].innerHTML = text;
+        }
     }
     
     </script>

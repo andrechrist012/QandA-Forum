@@ -18,6 +18,9 @@ Route::get('/table', [App\Http\Controllers\QnAController::class, 'masteruser']);
 
 Auth::routes();
 
+Route::get('/createThread', [App\Http\Controllers\QnAController::class, 'createThread']);
+Route::post('/create', [App\Http\Controllers\QnAController::class, 'create']);
+
 Route::get('/viewThread/{id}', [App\Http\Controllers\QnAController::class, 'viewThread']);
 Route::post('/replyThread/{id}', [App\Http\Controllers\QnAController::class, 'replyThread']);
 Route::delete('/deleteReply/{id}', [App\Http\Controllers\QnAController::class, 'deleteReply']);

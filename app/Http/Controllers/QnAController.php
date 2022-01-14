@@ -28,6 +28,24 @@ class QnAController extends Controller
         return view('masteruser', ['id' => $id, 'users' => $users]);
     }
 
+    public function createThread(){
+        $role = User::where('id', Auth::id())->value('role');
+        return view('form', compact('role'));
+    }
+
+    public function create(Request $request){
+        $role = User::where('id', Auth::id())->value('role');
+        $date = date('Y-m-d');
+        TrThread::create([
+            'title' => $request->title,
+            'category' => $request->category,
+            'description' => $request->description,
+            'userId' => Auth::id(),
+            'dateIn' => $date
+        ]);
+        return redirect('/');
+    }
+
     public function viewThread($id){
         $role = User::where('id', Auth::id())->value('role');
         $reply = TrReply::where('threadId', $id)->orderBy('dateIn', 'desc')->get();
