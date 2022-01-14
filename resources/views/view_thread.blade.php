@@ -37,7 +37,7 @@
                         <form action="/deleteReply/{{$value->id}}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger" style="position: absolute; top: 10px; left: 10px">Danger</button>
+                            <button type="submit" class="btn btn-danger" style="position: absolute; top: 10px; left: 10px">Delete</button>
                         </form>
                     @endif
                     <div style="color: black; display:flex; flex-direction:row-reverse; padding: 1em 1em 0 0">
