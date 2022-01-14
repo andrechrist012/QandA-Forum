@@ -16,9 +16,9 @@ class CreateTrRepliesTable extends Migration
         Schema::create('tr_replies', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('userId');
-            $table->foreign('userId')->references('id')->on('ms_users');
+            $table->foreign('userId')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedInteger('threadId');
-            $table->foreign('threadId')->references('id')->on('tr_threads');
+            $table->foreign('threadId')->references('id')->on('tr_threads')->onDelete('cascade');
             $table->string('message');
             $table->datetime('dateIn');
             $table->timestamps();
