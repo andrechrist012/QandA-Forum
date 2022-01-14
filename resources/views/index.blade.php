@@ -20,11 +20,11 @@
             @foreach($thread as $Threads)
                 <a href="/viewThread/{{$Threads->id}}" style="text-decoration: none">
                 <div id="isiThread">
-                    <div class="container border border-dark rounded mt-3">    
-                        <div class="text-left"><strong>{{ $Threads->title }}</strong> {{ $Threads->category }}</div>
-                            <div class="text-justify">{{ $Threads->description }}</div>
-                            <div class="text-right">{{ $Threads->dateIn }}</div>
-                            <div class="text-right">{{ $Threads->users->name }}</div>
+                    <div class="container rounded mt-3" style="background: #DDDDDD; color: black; padding: 10px">    
+                        <div class="text-left"><strong>{{ $Threads->title }}</strong> <span style="margin-left: 10px">{{ $Threads->category }}</span></div>
+                            <div class="text-justify longText">{{ $Threads->description }} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae commodi iste illum ex impedit fuga aliquid, ratione dolores numquam nobis iusto molestiae! Illo, illum optio. Necessitatibus excepturi veritatis quibusdam exercitationem!</div>
+                            <div class="text-right">{{ date('F d, Y', strtotime($Threads->dateIn)) }}</div>
+                            <div class="text-right"><strong>{{ $Threads->users->name }}</strong></div>
                         </div>
                     </div>
                 </a>

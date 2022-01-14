@@ -21,11 +21,6 @@ class QnAController extends Controller
         return view('index', compact('role', 'thread'));
     }
 
-    public function Thread(){
-        $Thread = DB::table('tr_threads')->get();
-        return view('index')->with('threads', $Thread);
-    }
-
     public function masteruser(){
         $id = 1;
         $users = User::all();
@@ -35,17 +30,19 @@ class QnAController extends Controller
 
     public function viewThread($id){
         $role = User::where('id', Auth::id())->value('role');
-        $reply = TrReply::where('threadId', $id)->get();
+        $reply = TrReply::where('threadId', $id)->orderBy('dateIn', 'desc')->get();
         $thread = TrThread::find($id);
         return view('view_thread', compact('thread', 'reply', 'role'));
     }
 
     public function replyThread(Request $request, $id){
         $thread = TrThread::find($id);
+        $date = date('Y-m-d');
         TrReply::create([
             'message' => $request->message,
             'userId' => Auth::id(),
-            'threadId' => $thread->id
+            'threadId' => $thread->id,
+            'dateIn' => $date
         ]);
         return redirect()->back();
     }
