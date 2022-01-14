@@ -22,11 +22,18 @@ class QnAController extends Controller
     }
 
     public function masteruser(){
-        $id = 1;
-        $users = User::all();
-
-        return view('masteruser', ['id' => $id, 'users' => $users]);
+        $role = User::where('id', Auth::id())->value('role');
+        $users = User::where('role', 'M')->get();
+        return view('masteruser', compact('role', 'users'));
     }
+
+    public function removeUser($id)
+    {
+        $user = User::find($id);
+        $user->delete();
+        return redirect('/tableUser');
+    }
+
 
     public function createThread(){
         $role = User::where('id', Auth::id())->value('role');
@@ -62,6 +69,12 @@ class QnAController extends Controller
             'threadId' => $thread->id,
             'dateIn' => $date
         ]);
+        return redirect()->back();
+    }
+
+    public function removeThread($id){
+        $thread = TrThread::find($id);
+        $thread->delete();
         return redirect()->back();
     }
 

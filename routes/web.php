@@ -13,13 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::get('/table', [App\Http\Controllers\QnAController::class, 'masteruser']);
-
 Auth::routes();
+
+Route::get('/tableUser', [App\Http\Controllers\QnAController::class, 'masteruser']);
+Route::delete('/removeUser/{id}', [App\Http\Controllers\QnAController::class, 'removeUser']);
 
 Route::get('/createThread', [App\Http\Controllers\QnAController::class, 'createThread']);
 Route::post('/create', [App\Http\Controllers\QnAController::class, 'create']);
+Route::delete('/removeThread/{id}', [App\Http\Controllers\QnAController::class, 'removeThread']);
 
 Route::get('/viewThread/{id}', [App\Http\Controllers\QnAController::class, 'viewThread']);
 Route::post('/replyThread/{id}', [App\Http\Controllers\QnAController::class, 'replyThread']);

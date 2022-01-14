@@ -20,8 +20,8 @@
         </div>
         <div class="fs-5">
             @if($role == 'A')
-                <a style="color: white; margin-right:40px; text-decoration: none;" href="/table">Master User</a>
-                <a style="color: white; text-decoration: none;" class="dropdown-item" href="{{ route('logout') }}"
+                <a style="color: white; margin-right:40px; text-decoration: none;" href="/tableUser">Master User</a>
+                <a style="color: white; text-decoration: none;"  href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
                     {{ __('Logout') }}
