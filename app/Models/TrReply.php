@@ -12,7 +12,7 @@ class TrReply extends Model
     protected $fillable = ["id", "userId", "threadId", "message", "dateIn"];
 
     public function user(){
-        return $this->belongsTo(MsUser::class);
+        return $this->belongsTo(User::class, 'userId');
     }
 
     public function thread(){

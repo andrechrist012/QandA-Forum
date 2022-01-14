@@ -15,30 +15,34 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
+            'id' => 1,
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
-            'password' => 'admin1234',
+            'password' => bcrypt('admin1234'),
             'role' => 'A'
         ]);
 
         DB::table('users')->insert([
+            'id' => 2,
             'name' => 'Andre Christ',
             'email' => 'andre@gmail.com',
-            'password' => 'andre1234',
+            'password' => bcrypt('andre1234'),
             'role' => 'M'
         ]);
 
         DB::table('users')->insert([
+            'id' => 3,
             'name' => 'Ramadhany',
             'email' => 'rama@gmail.com',
-            'password' => 'rama12345',
+            'password' => bcrypt('rama12345'),
             'role' => 'M'
         ]);
 
         DB::table('users')->insert([
+            'id' => 4,
             'name' => 'Renaldy',
             'email' => 'renaldy@gmail.com',
-            'password' => 'renaldy1234',
+            'password' => bcrypt('renaldy1234'),
             'role' => 'M'
         ]);
 

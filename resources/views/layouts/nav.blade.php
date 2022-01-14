@@ -14,11 +14,11 @@
 </head>
 <body>
     <nav class="d-flex flex-direction-row justify-content-between bg-primary px-4 text-white" style="align-items: center; padding: 0; margin: 0;">
-        <a style="color: white" href=""><img width="55%" src="{{ asset('asset/logo.png') }}"></a>
+        <a style="color: white" href="/"><img width="55%" src="{{ asset('asset/logo.png') }}"></a>
         <div class="d-flex flex-direction-row">
         </div>
         <div class="fs-5">
-            @if($id == 1)
+            @if($role == 'A')
                 <a style="color: white; margin-right:40px; text-decoration: none;" href="/table">Master User</a>
                 <a style="color: white; text-decoration: none;" class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
@@ -28,7 +28,7 @@
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>
-            @elseif($id == 2)
+            @elseif($role == 'M')
                 <a style="color: white; text-decoration: none;" class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">

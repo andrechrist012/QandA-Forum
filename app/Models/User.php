@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role'
     ];
 
     /**
@@ -41,4 +42,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function tr_threads(){
+        return $this->hasMany(TrThread::class);
+    }
+
+    public function reply(){
+        return $this->hasMany(TrReply::class);
+    }
 }

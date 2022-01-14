@@ -1,4 +1,4 @@
-@extends('nav')
+@extends('layouts.nav')
 
 @section('title', 'View Thread')
 
@@ -9,7 +9,7 @@
             <div class="card-header" style="color: black; display:flex;">
                 <img src="{{asset('asset/user.png')}}" style="width: 4%">
                 <div style="display: flex; flex-direction:column; margin-left: .5em">
-                    <a>{{$thread->user->name}}</a>
+                    <a>{{$thread->userId}}</a>
                     <a style="font-size: 12px">{{$thread->dateIn}}</a>
                 </div>
             </div>

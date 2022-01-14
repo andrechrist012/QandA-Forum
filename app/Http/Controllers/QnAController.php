@@ -2,17 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MsUser;
+use Auth;
+use App\Models\User;
 use App\Models\TrThread;
 use App\Models\TrReply;
 use Illuminate\Http\Request;
 
 class QnAController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     //
     public function index(){
-        $id = 1;
-        return view('index', ['id' => $id]);
+        $role = User::where('id', Auth::id())->value('role');
+        $thread = TrThread::all();
+        return view('index', compact('role', 'thread'));
     }
 
     public function Thread(){
@@ -22,21 +28,16 @@ class QnAController extends Controller
 
     public function masteruser(){
         $id = 1;
-        $users = MsUser::all();
+        $users = User::all();
 
         return view('masteruser', ['id' => $id, 'users' => $users]);
     }
 
-    // public function update(MsUser $users){
-    //     $users->update([
-    //         'name'=>request('name'),
-    //         'email'=>request('email'),
-    //     ]);
-    // }
     public function viewThread($id){
-        $reply = TrReply::all();
+        $role = User::where('id', Auth::id())->value('role');
+        $reply = TrReply::where('threadId', $id)->get();
         $thread = TrThread::find($id);
-        return view('view_thread', compact('reply'));
+        return view('view_thread', compact('thread', 'reply', 'role'));
     }
 
     public function replyThread(Request $request, $id){
