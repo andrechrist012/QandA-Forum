@@ -23,6 +23,10 @@ Route::post('/create', [App\Http\Controllers\QnAController::class, 'create']);
 Route::delete('/removeThread/{id}', [App\Http\Controllers\QnAController::class, 'removeThread']);
 
 Route::get('/viewThread/{id}', [App\Http\Controllers\QnAController::class, 'viewThread']);
+
+Route::get('/updateThread/{id}', [App\Http\Controllers\QnAController::class, 'updateThread']);
+Route::put('/update/{id}', [App\Http\Controllers\QnAController::class, 'update']);
+
 Route::post('/replyThread/{id}', [App\Http\Controllers\QnAController::class, 'replyThread']);
 Route::delete('/deleteReply/{id}', [App\Http\Controllers\QnAController::class, 'deleteReply']);
 

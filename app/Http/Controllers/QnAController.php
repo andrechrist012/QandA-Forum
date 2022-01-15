@@ -17,7 +17,7 @@ class QnAController extends Controller
     //
     public function index(){
         $role = User::where('id', Auth::id())->value('role');
-        $thread = TrThread::all();
+        $thread = TrThread::orderBy('dateIn', 'desc')->get();
         return view('index', compact('role', 'thread'));
     }
 
@@ -43,6 +43,11 @@ class QnAController extends Controller
     public function create(Request $request){
         $role = User::where('id', Auth::id())->value('role');
         $date = date('Y-m-d');
+        $request->validate([
+    		'title' => 'required',
+            'category' => 'required',
+            'description' => 'required',
+    	]);
         TrThread::create([
             'title' => $request->title,
             'category' => $request->category,
@@ -63,6 +68,9 @@ class QnAController extends Controller
     public function replyThread(Request $request, $id){
         $thread = TrThread::find($id);
         $date = date('Y-m-d');
+        $request->validate([
+    		'message' => 'required',
+    	]);
         TrReply::create([
             'message' => $request->message,
             'userId' => Auth::id(),
@@ -70,6 +78,31 @@ class QnAController extends Controller
             'dateIn' => $date
         ]);
         return redirect()->back();
+    }
+
+    public function updateThread($id){
+        $role = User::where('id', Auth::id())->value('role');
+        $thread = TrThread::find($id);
+        return view('form_update', compact('thread', 'role'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $thread = TrThread::find($id);
+        $date = date('Y-m-d');
+        $request->validate([
+    		'title' => 'required',
+            'category' => 'required',
+            'description' => 'required',
+    	]);
+        $thread->update([
+            'title' => $request->title,
+            'category' => $request->category,
+            'description' => $request->description,
+            'dateIn' => $date
+        ]);
+        
+        return redirect('/');
     }
 
     public function removeThread($id){
