@@ -21,6 +21,13 @@ class QnAController extends Controller
         return view('index', compact('role', 'thread'));
     }
 
+    public function search(Request $request){
+        $searchValue = $request->search;
+        $role = User::where('id', Auth::id())->value('role');
+        $thread = TrThread::where('title','like',"%".$searchValue."%")->orderBy('dateIn', 'desc')->get();
+        return view('index', compact('role', 'thread'));
+    }
+
     public function masteruser(){
         $role = User::where('id', Auth::id())->value('role');
         $users = User::where('role', 'M')->get();
@@ -68,9 +75,6 @@ class QnAController extends Controller
     public function replyThread(Request $request, $id){
         $thread = TrThread::find($id);
         $date = date('Y-m-d');
-        $request->validate([
-    		'message' => 'required',
-    	]);
         TrReply::create([
             'message' => $request->message,
             'userId' => Auth::id(),

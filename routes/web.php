@@ -31,3 +31,4 @@ Route::post('/replyThread/{id}', [App\Http\Controllers\QnAController::class, 're
 Route::delete('/deleteReply/{id}', [App\Http\Controllers\QnAController::class, 'deleteReply']);
 
 Route::get('/', [App\Http\Controllers\QnAController::class, 'index'])->name('home');
+Route::get('/search', [App\Http\Controllers\QnAController::class, 'search']);

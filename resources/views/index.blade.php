@@ -8,7 +8,9 @@
 <center>
     <div style="padding-top:10px">
         <div class="container row">
-            <input id="myInput" class="form-control col mr-5"  type="search" placeholder="Search" aria-label="Search">
+            <form action="/search" method="GET" style="width: 80%; margin:auto">
+                <input id="myInput" class="form-control col mr-5"  type="search" placeholder="Search" aria-label="Search" name="search">
+            </form>
                 @if($role == 'M')
                     <div>
                     <a href="/createThread" class="h4 border border-dark rounded mt-1 bg-primary"  
