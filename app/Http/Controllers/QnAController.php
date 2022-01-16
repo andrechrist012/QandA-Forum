@@ -112,7 +112,7 @@ class QnAController extends Controller
     public function removeThread($id){
         $thread = TrThread::find($id);
         $thread->delete();
-        return redirect()->back();
+        return redirect()->home();
     }
 
     public function deleteReply($id){
